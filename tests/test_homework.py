@@ -25,7 +25,6 @@ def search_field(fields, attname):
 
 
 def search_refind(execution, user_code):
-    """Поиск запуска"""
     for temp_line in user_code.split('\n'):
         if re.search(execution, temp_line):
             return True
@@ -49,7 +48,6 @@ class TestPost:
         assert response.status_code == 200, (
             'Главная страница работает неправильно.'
         )
-        # проверка моделей
         response_text = response.content.decode()
         posts = Post.objects.all()
         for p in posts:
