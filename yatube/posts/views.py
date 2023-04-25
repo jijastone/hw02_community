@@ -6,7 +6,8 @@ COUNT_POST = 10
 
 
 def index(request):
-    posts = Post.objects.order_by('-pub_date')[:COUNT_POST].select_related('group')
+    posts = Post.objects.order_by('-pub_date')[:COUNT_POST]\
+        .select_related('group')
     context = {
         'posts': posts,
     }
